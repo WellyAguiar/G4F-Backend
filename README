@@ -1,0 +1,75 @@
+# G4F-Backend
+
+Este é um projeto Backend desenvolvido como parte do processo seletivo para a vaga na G4F. A aplicação foi criada utilizando Node.js com o framework Express.
+
+## Instalação e Execução
+
+### Instalação das Dependências
+
+Antes de rodar o projeto, instale as dependências:
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/WellyAguiar/G4F-Backend
+
+   ```
+
+2. Instale as dependências:
+
+    npm install
+
+### Rodando o Projeto
+
+# A) Localmente
+
+    1. Para rodar o servidor de desenvolvimento localmente, use o comando:
+
+        npm start
+
+    Isso iniciará a API na porta 3333 (http://localhost:3333).
+
+    A rota para as noticias é localhost:3333/news
+
+# B) No Docker
+
+    Para rodar o projeto dentro de um container do Docker, use o Dockerfile na raiz do projeto:
+
+    1. Construa a imagem Docker:
+
+        docker build -t welly-backend .
+
+    2. Rode a aplicação no Docker:
+
+        docker run -p 3333:3333 welly-backend
+
+    Isso irá expor a API na porta 3333 do seu computador.
+
+     A rota para as noticias é localhost:3333/news
+
+### Testes
+
+    Para rodar os testes, use o seguinte comando:
+
+        npm test
+
+    Isso executará os testes configurados no Jest para validar a API.
+
+### Funcionalidades
+
+1. CRUD de Notícias: A API permite criar, listar, buscar, atualizar e deletar notícias. Cada notícia possui os atributos "título" e "descrição".
+
+2. Banco de Dados: A aplicação utiliza uma array para teste do backend, caso queira conectar com um banco de dados externo basta colocar a lógica no src/config/db.js
+
+### Justificativa da Estrutura de Pastas
+
+1. controllers/: Contém a lógica das requisições HTTP. Mantém a separação entre regras de negócio e camadas de controle.
+
+2. models/: Responsável pelo gerenciamento de dados. Aqui seriam definidos os modelos se utilizássemos um banco de dados.
+
+3. routes/: Define as rotas da API, facilitando a escalabilidade e organização do código.
+
+4. tests/: Contém os testes da aplicação para garantir a estabilidade da API.
+
+Essa organização facilita a manutenção do código, a adição de novas funcionalidades e a colaboração com outros desenvolvedores.
+
